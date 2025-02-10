@@ -1,10 +1,16 @@
-function formatMessage(message, maxLength){
-if (message<=maxLength){
-    return message;
-}
-else {
-    return message.slice(0,maxLength) + "...";
-}
+function formatMessage(message, maxLength) {
+
+    if (typeof message !== 'string' || typeof maxLength !== 'number' || maxLength <= 0) {
+        console.error('Invalid input: message should be a string and maxLength should be a positive number');
+        return null;
+    }
+
+
+    if (message.length <= maxLength) {
+        return message;
+    } else {
+        return message.slice(0, maxLength) + "...";
+    }
 }
 // Оголоси функцію formatMessage(message, maxLength),
 // яка приймає рядок (параметр message) та перевіряє його довжину відповідно до
