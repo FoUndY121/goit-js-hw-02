@@ -1,10 +1,16 @@
 
-function checkForSpam(messagee){
-
-return !messagee.toLowerCase().includes('spam');
+function checkForSpam(message){
+    let lowerCaseMessage = message.toLowerCase();
+    return lowerCaseMessage.includes("spam") || lowerCaseMessage.includes("sale");
+    // const spamWords = ['spam','sale'];
+    // let lowerCaseMessage = message.toLowerCase();
+    // for(let word of spamWords){
+    //     if(lowerCaseMessage.includes(word)){
+    //         return true;
+    //     }
+    // }
+    // return false;
 }
-
-
 // Функція checkForSpam(message) приймає рядок
 // (параметр message), перевіряє його на вміст заборонених
 // слів spam і sale, і повертає результат перевірки. Слова в
@@ -23,3 +29,7 @@ console.log(checkForSpam("Amazing SalE, only tonight!")); // true
 console.log(checkForSpam("Trust me, this is not a spam message")); // true
 console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true
 console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
+
+
+
+
